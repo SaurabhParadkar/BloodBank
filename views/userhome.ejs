@@ -1,0 +1,60 @@
+<%- include('blocks/userheader.ejs') %>
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Welcome <%=name%></h2>
+        <div class="line-dec"></div>
+      </div>
+
+      <table class='table'>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Group</th>
+          </tr>
+
+          <% users.forEach((rec)=>
+          { %>
+
+              <tr>
+                <td><%=rec.name%></td>
+                <td><%=rec.email%></td>
+                <td><%=rec.group%></td>
+              </tr>
+
+          <% }) %>
+      </table>
+
+      <div class="section-heading">
+        <h2>Blood Request</h2>
+        <div class="line-dec"></div>
+      </div>
+
+      <table class='table'>
+        <tr>
+          <th>Date</th>
+          <th>Person Name</th>
+          <th>Hospital</th>
+          <th>Contact</th>
+          <th>Group</th>
+        </tr>
+
+        <%
+          list.forEach(rec=>
+          { %>
+
+            <tr>
+              <td><%=rec.date%></td>
+              <td><%=rec.name%></td>
+              <td><%=rec.hosital%> (<%=rec.city%>)</td>
+              <td><%=rec.contact%></td>
+              <td><%=rec.group%></td>
+            </tr>
+
+        <%  })
+        %>
+    </table>
+    </div>
+</section>
+
+<%- include('blocks/footer.ejs') %>
